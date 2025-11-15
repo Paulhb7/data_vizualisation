@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisations 3D - Three.js</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #navigation {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        #navigation h2 {
+            color: #4fc3f7;
+            margin: 0 0 15px 0;
+            font-size: 1.2em;
+        }
+        
+        #navigation button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        #navigation button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        #navigation button.active {
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+            box-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="navigation">
+        <h2>3D Visualisations</h2>
+        <button id="btn-solar" class="active">Solar System</button>
+        <button id="btn-dna">DNA</button>
+        <button id="btn-particles">Particles</button>
+        <button id="btn-galaxy">Galaxy</button>
+    </div>
+    <div id="container">
+        <div id="canvas-container"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="visualizations/solarSystem.js"></script>
+    <script src="visualizations/dna.js"></script>
+    <script src="visualizations/particles.js"></script>
+    <script src="visualizations/galaxy.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
